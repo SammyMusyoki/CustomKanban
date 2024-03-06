@@ -19,35 +19,35 @@ const Board = () => {
             <Column 
             title="Backlog"
             column="backlog"
-            headingColor="text-neutral-500"
+            headingColor="border-green-500"
             cards={cards}
             setCards={setCards}
             />
             <Column 
             title="Todo"
             column="todo"
-            headingColor="text-yellow-200"
+            headingColor="border-blue-500"
             cards={cards}
             setCards={setCards}
             />
             <Column 
             title="In Progress"
             column="In progress"
-            headingColor="text-blue-200"
+            headingColor="border-yellow-300"
             cards={cards}
             setCards={setCards}
             />
             <Column 
             title="Review"
             column="review"
-            headingColor="text-emerald-200"
+            headingColor="border-purple-500"
             cards={cards}
             setCards={setCards}
             />
             <Column 
             title="Complete"
             column="Done"
-            headingColor="text-purple-400"
+            headingColor="border-yellow-800"
             cards={cards}
             setCards={setCards}
             />

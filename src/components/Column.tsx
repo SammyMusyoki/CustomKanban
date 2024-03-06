@@ -4,7 +4,7 @@ import React, { Dispatch, SetStateAction, useState } from 'react'
 import AddCard from './AddCard';
 import DropIndicators from './DropIndicators';
 import Card from './Card';
-
+import ColumnHeader from './ColumnHeader';
 
 type ColumnType = "backlog" | "todo" | "In progress" | "review" | "Done";
 
@@ -135,14 +135,22 @@ const Column = ({
   };
 
     const filteredCards = cards.filter((card) => card.column === column);
+
+    const updateFraction = () => {
+
+      let currentCount = filteredCards.length
+      // Calculate the new denominator based on the length of the filtercards
+      let denominator = Math.ceil(currentCount / 5) * 5;
+
+      // If the length of filtercards is less than 5, set denominator to 5
+      denominator = denominator < 5 ? 5 : denominator;
+
+      return `${currentCount} / ${denominator}`
+    };
+
     return (
-      <div className='w-80 shrink-0 border p-1 border-neutral-500 rounded-xl'>
-        <div className="mb-3 flex items-center justify-between p-2">
-          <h3 className={`font-medium ${headingColor}`}>{title}</h3>
-          <span className="rounded text-sm text-neutral-400">
-            {filteredCards.length}
-          </span>
-        </div>
+      <div className='relative w-80 shrink-0 border p-1 border-neutral-500 rounded-md'>
+      <ColumnHeader updateFraction={updateFraction} title={title} headingColor={headingColor} />
 
         <div 
         onDrop={handleDragEnd}
