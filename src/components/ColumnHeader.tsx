@@ -48,11 +48,18 @@ const ColumnHeader = ({headingColor, title, updateFraction} : ColumnHeaderProps)
 
 export default ColumnHeader
 
+type HeaderDropDownProps = {
+
+}
+
 
 
 const HeaderDropDown = () => {
+    const deleteAllCardInColumn = () => {
+        
+    }
     return (
-        <div className="p-2 w-56 border border-neutral-600 rounded bg-neutral-900">
+        <div className="p-2 pt-4 w-56 border border-neutral-600 rounded bg-neutral-900">
             <h4 className="text-sm">Items</h4>
             <div className="flex items-center p-1 hover:border hover:border-red-400/30 rounded hover:bg-red-400/10 gap-2 mt-2 text-red-400">
                 <span><GoTrash /></span>
@@ -61,7 +68,15 @@ const HeaderDropDown = () => {
                 </button>
             </div>
 
-            <span className="border-b" />
+            <hr className="border-b-0.5 my-2 border-neutral-500" />
+
+            <h4 className="text-sm">Column</h4>
+            <div className="flex items-center p-1 hover:border hover:border-red-400/30 rounded hover:bg-red-400/10 gap-2 mt-2 text-red-400">
+                <span><GoTrash /></span>
+                <button>
+                    Delete
+                </button>
+            </div>
         </div>
     )
 }

@@ -136,17 +136,18 @@ const Column = ({
 
     const filteredCards = cards.filter((card) => card.column === column);
 
-    const updateFraction = () => {
+  const updateFraction = () => {
 
-      let currentCount = filteredCards.length
-      // Calculate the new denominator based on the length of the filtercards
-      let denominator = Math.ceil(currentCount / 5) * 5;
+    let currentCount = filteredCards.length
+    // Calculate the new denominator based on the length of the filtercards
+    let denominator = Math.ceil(currentCount / 5) * 5;
 
-      // If the length of filtercards is less than 5, set denominator to 5
-      denominator = denominator < 5 ? 5 : denominator;
+    // If the length of filtercards is less than 5, set denominator to 5
+    denominator = denominator < 5 ? 5 : denominator;
 
-      return `${currentCount} / ${denominator}`
-    };
+    return `${currentCount} / ${denominator}`
+  };
+
 
     return (
       <div className='relative w-80 shrink-0 border p-1 border-neutral-500 rounded-md'>
